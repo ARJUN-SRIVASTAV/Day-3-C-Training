@@ -1,0 +1,36 @@
+#include<stdio.h>
+int is_sorted(int arr[20],int n)
+{
+  if(n==1) 
+  {
+      return 1;
+  }
+  if(arr[0]>arr[1])
+  {
+      return 0;
+  }
+  else
+  {
+     return (is_sorted(arr+1,n-1));
+  }
+}
+ int main()
+ {
+  int arr[20],n;
+  scanf("%d",&n);
+  for(int i=0;i<n;i++)
+  {
+      scanf("%d",&arr[i]);
+  }
+ int  b=is_sorted(arr,n);
+  if(b==1)
+  {
+      printf(" array is sorted");
+      
+  }
+  else
+  {
+      printf("array is not sorted");
+  }
+  return 0;
+ }
