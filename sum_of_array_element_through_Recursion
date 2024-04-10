@@ -1,0 +1,25 @@
+#include<stdio.h>
+int sum(int arr[20],int size){
+    if(size==1)
+    {
+        return arr[0];
+        
+    }
+    else
+    {
+        return (arr[0]+sum(arr+1,size-1));
+    }
+}
+int main()
+{
+    int arr[20], size,i;
+    scanf("%d",&size);
+    for(i=0;i<size;i++ )
+    {
+        scanf("%d",&arr[i]);
+        
+    }
+    int b=sum(arr,size);
+    printf("%d",b);
+    return 0;
+}
